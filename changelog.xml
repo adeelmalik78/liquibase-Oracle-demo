@@ -22,9 +22,9 @@
 -->
 
 
-    <changeSet author="johnv" id="func_F_PE_ANNUAL_SEASONAL_PERIOD" runOnChange="true" >
+    <changeSet author="johnv" id="F_PE_ANNUAL_SEASONAL_PERIOD" runOnChange="true" >
       <sqlFile 
-        path="main/alps_migration_example/F_PE_ANNUAL_SEASONAL_PERIOD.sql" 
+        path="sqlcode/release1/3-functions/F_PE_ANNUAL_SEASONAL_PERIOD.sql" 
         encoding="UTF-8"
         splitStatements="true"
         stripComments="false"
@@ -38,9 +38,9 @@
       </rollback>
     </changeSet>
 
-    <changeSet author="johnv" id="func_F_GET_ANNUAL_SEASONAL_PERIOD" runOnChange="true">
+    <changeSet author="johnv" id="F_GET_ANNUAL_SEASONAL_PERIOD" runOnChange="true">
       <sqlFile 
-        path="main/alps_migration_example/F_GET_ANNUAL_SEASONAL_PERIOD.sql" 
+        path="sqlcode/release1/3-functions/F_GET_ANNUAL_SEASONAL_PERIOD.sql" 
         encoding="UTF-8"
         splitStatements="true"
         stripComments="false"
@@ -56,7 +56,7 @@
 
     <changeSet author="johnv" id="pb_alps_parser_pkg" runOnChange="true">
       <sqlFile 
-        path="main/alps_migration_example/ALPS_PARSER_PKG_10312023.pkb" 
+        path="sqlcode/release1/6-packagebody/ALPS_PARSER_PKG_10312023.pkb" 
         encoding="UTF-8"
         splitStatements="true"
         stripComments="false"
@@ -72,7 +72,7 @@
 
     <changeSet author="johnv" id="pb_alps_mml_pkg" runOnChange="true">
       <sqlFile 
-        path="main/alps_migration_example/alps_mml_pkg.pkb" 
+        path="sqlcode/release1/6-packagebody/alps_mml_pkg.pkb" 
         encoding="UTF-8"
         splitStatements="true"
         stripComments="false"
@@ -88,7 +88,7 @@
 
     <changeSet author="johnv" id="pb_alps_data_pkg" runOnChange="true">
       <sqlFile 
-        path="main/alps_migration_example/alps_data_pkg.pkb" 
+        path="sqlcode/release1/6-packagebody/alps_data_pkg.pkb" 
         encoding="UTF-8"
         splitStatements="true"
         stripComments="false"
@@ -103,60 +103,9 @@
     </changeSet>
 
 
-  <!-- <includeAll path="main/100_ddl" relativeToChangelogFile="true"/>
-  <include file="main/200_procedures/changelog.xml" relativeToChangelogFile="true"/>
-  <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
-
-
-  <!-- <changeSet author="nvoxland" id="DB-1011">
-    <sqlFile path="main/100_ddl/01_sales.sql"/>
-    <rollback>
-        <sqlFile path="main/100_ddl/01_sales-rollback.sql"/>
-    </rollback>
-  </changeSet>
-
- <changeSet author="nvoxland" id="DB-1011.1" >
-   <sql>
-     ALTER TABLE SALES ADD country varchar (100);
-   </sql>
-   <rollback>
-     <sql>
-       ALTER TABLE SALES DROP COLUMN COUNTRY;
-     </sql>
-   </rollback>
- </changeSet>
-
-  <changeSet author="nvoxland" id="DB-1012">
-    <sqlFile path="main/100_ddl/02_employee.sql"/>
-    <rollback>
-        <sqlFile path="main/100_ddl/02_employee-rollback.sql"/>
-      </rollback>
-  </changeSet>
-
-
-  <changeSet author="nvoxland" id="DB-1013">
-    <sqlFile path="main/100_ddl/03_contractors.sql"/>
-    <rollback>
-        <sqlFile path="main/100_ddl/03_contractors-rollback.sql"/>
-      </rollback>
-  </changeSet>
-
-  <changeSet id="DB-1017" author="nvoxland" runOnChange="true">
-      <sqlFile path="main/200_procedures/add_sales_history_v2.sql"
-        encoding="UTF-8"
-        splitStatements="true"
-        stripComments="false"
-        endDelimiter="/"
-        relativeToChangelogFile="true"/>
-      <rollback>
-        <sqlFile path="main/200_procedures/add_sales_history_v1.sql"
-          encoding="UTF-8"
-          splitStatements="true"
-          stripComments="false"
-          endDelimiter="/"
-          relativeToChangelogFile="true"/>
-      </rollback>
-  </changeSet> -->
+  <!-- <includeAll path="main/100_ddl" relativeToChangelogFile="true"/> -->
+  <!-- <include file="main/200_procedures/changelog.xml" relativeToChangelogFile="true"/> -->
+  <!-- <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
 
 
 </databaseChangeLog>
