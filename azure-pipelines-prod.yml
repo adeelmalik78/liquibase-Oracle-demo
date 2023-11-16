@@ -65,7 +65,9 @@ stages:
         definition: ALPS DB - UAT
         buildVersionToDownload: 'specific'
         pipelineId: ${{ parameters.ARTIFACTNUMBER }}
-        itemPattern: 'main/**'
+        itemPattern: |
+          sqlcode/**
+          changelog.xml
     - task: PowerShell@2
       displayName: 'Liquibase-Flow'
       inputs:
@@ -108,7 +110,9 @@ stages:
         definition: ALPS DB - UAT
         buildVersionToDownload: 'specific'
         pipelineId: ${{ parameters.ARTIFACTNUMBER }}
-        itemPattern: 'main/**'
+        itemPattern: |
+          sqlcode/**
+          changelog.xml
     - task: PowerShell@2
       displayName: 'Liquibase-Flow'
       inputs:
