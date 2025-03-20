@@ -98,7 +98,7 @@
 
   <includeAll path="main/100_ddl" relativeToChangelogFile="true"/>
   <!-- <includeAll path="main/200_procedures" relativeToChangelogFile="true"/> -->
-  <!-- <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
+  <includeAll path="main/700_dml" relativeToChangelogFile="true"/>
 
 
   <!-- <changeSet author="nvoxland" id="DB-1011">
