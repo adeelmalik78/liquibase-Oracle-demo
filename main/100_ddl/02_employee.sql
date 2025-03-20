@@ -9,3 +9,8 @@ create table employee (
     city varchar(30)
 );
 --rollback drop table employee;
+
+--changeset amalik:employee_addState
+alter table employee
+    add state varchar(5);
+--rollback empty
