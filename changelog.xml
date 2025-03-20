@@ -26,7 +26,6 @@
       <sqlFile 
         path="main/alps_migration_example/F_PE_ANNUAL_SEASONAL_PERIOD.sql" 
         encoding="UTF-8"
-        splitStatements="true"
         stripComments="false"
         endDelimiter="/"
         relativeToChangelogFile="true"/>
