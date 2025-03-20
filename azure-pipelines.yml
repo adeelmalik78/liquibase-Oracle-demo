@@ -1,0 +1,65 @@
+# Starter pipeline
+
+#trigger: none
+
+name: $(appname)-$(Build.BuildId)
+
+workspace:
+  clean: all
+
+pool:
+  name: 'Windows'
+
+variables:
+  appname: DCRK
+  version: $(Build.BuildId)
+#  ddb_repo: hms-ccdbprstg-ddb
+#  sql_repo: hms-ccdbprstg-sql
+
+steps:  
+# - powershell: .\init.ps1
+#   displayName: 'Run Liquibase'
+#   env:
+#     LIQUIBASE_COMMAND_URL: $(URL)
+#     LIQUIBASE_COMMAND_USERNAME: $(USERNAME)
+#     LIQUIBASE_COMMAND_PASSWORD: $(PASSWORD)
+#     LIQUIBASE_COMMAND_CHANGELOG_FILE: $(CHANGELOG)
+#     LIQUIBASE_PRO_LICENSE_KEY: $(PRO_LICENSE_KEY)
+
+# - powershell: "C:\\agent\\_work\\_tool\\liquibase-4.23.1\\liquibase flow"
+#   displayName: 'Run Liquibase Flow'
+#   env:
+#     LIQUIBASE_COMMAND_URL: $(URL)
+#     LIQUIBASE_COMMAND_USERNAME: $(USERNAME)
+#     LIQUIBASE_COMMAND_PASSWORD: $(PASSWORD)
+#     LIQUIBASE_COMMAND_CHANGELOG_FILE: $(CHANGELOG)
+#     LIQUIBASE_PRO_LICENSE_KEY: $(PRO_LICENSE_KEY)
+
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'filePath'
+#     filePath: "init.ps1"
+#     arguments: > # Use this to avoid newline characters in multiline string
+#       # -input1 "flow"
+#   displayName: 'Run Liquibase Flow'
+#   env:
+#     LIQUIBASE_COMMAND_URL: $(URL)
+#     LIQUIBASE_COMMAND_USERNAME: $(USERNAME)
+#     LIQUIBASE_COMMAND_PASSWORD: $(PASSWORD)
+#     LIQUIBASE_COMMAND_CHANGELOG_FILE: $(CHANGELOG)
+#     LIQUIBASE_PRO_LICENSE_KEY: $(PRO_LICENSE_KEY)
+
+- task: PowerShell@2
+  displayName: 'Run Liquibase Flow'
+  inputs:
+    targetType: 'inline'
+    script: |
+      C:\agent\_work\_tool\liquibase-4.23.1\liquibase.bat flow
+      Write-Host Last exit code: $LASTEXITCODE
+  env:
+    LIQUIBASE_COMMAND_URL: $(URL)
+    LIQUIBASE_COMMAND_USERNAME: $(USERNAME)
+    LIQUIBASE_COMMAND_PASSWORD: $(PASSWORD)
+    LIQUIBASE_COMMAND_CHANGELOG_FILE: $(CHANGELOG)
+    LIQUIBASE_PRO_LICENSE_KEY: $(PRO_LICENSE_KEY)
+    BYPASS_LIQUIBASE_CHECKS: "false"      # This variable can take on "false" or "bypass" values
