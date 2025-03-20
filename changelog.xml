@@ -22,7 +22,7 @@
 -->
 
 
-    <!-- <changeSet author="johnv" id="john:func_F_PE_ANNUAL_SEASONAL_PERIOD" runOnChange="true" >
+    <changeSet author="johnv" id="john:func_F_PE_ANNUAL_SEASONAL_PERIOD" runOnChange="true" runWith="sqlplus">
       <sqlFile 
         path="main/alps_migration_example/F_PE_ANNUAL_SEASONAL_PERIOD.sql" 
         encoding="UTF-8"
@@ -35,7 +35,7 @@
           DROP FUNCTION ${schema.name}.F_PE_ANNUAL_SEASONAL_PERIOD;
         </sql>
       </rollback>
-    </changeSet> -->
+    </changeSet>
 
     <!-- <changeSet author="johnv" id="john:func_F_GET_ANNUAL_SEASONAL_PERIOD" runOnChange="true">
       <sqlFile 
