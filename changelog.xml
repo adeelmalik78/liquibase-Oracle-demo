@@ -97,7 +97,7 @@
 
 
   <includeAll path="main/100_ddl" relativeToChangelogFile="true"/>
-  <include file="main/200_procedures" relativeToChangelogFile="true"/>
+  <includeAll path="main/200_procedures" relativeToChangelogFile="true"/>
   <!-- <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
 
 
