@@ -98,13 +98,13 @@
     </changeSet> -->
 
 
-  <!-- <includeAll path="main/100_ddl" relativeToChangelogFile="true"/>
-  <include file="main/200_procedures/changelog.xml" relativeToChangelogFile="true"/>
-  <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
+  <includeAll path="main/100_ddl" relativeToChangelogFile="true"/>
+  <!-- <include file="main/200_procedures/changelog.xml" relativeToChangelogFile="true"/> -->
+  <!-- <includeAll path="main/700_dml" relativeToChangelogFile="true"/> -->
 
 
-  <changeSet author="nvoxland" id="DB-1011">
-    <sqlFile path="main/100_ddl/01_sale.sql"/>
+  <!-- <changeSet author="nvoxland" id="DB-1011">
+    <sqlFile path="main/100_ddl/01_sales.sql"/>
     <rollback>
         <sqlFile path="main/100_ddl/01_sales-rollback.sql"/>
     </rollback>
@@ -151,7 +151,7 @@
           endDelimiter="/"
           relativeToChangelogFile="true"/>
       </rollback>
-  </changeSet>
+  </changeSet> -->
 
 
 </databaseChangeLog>
