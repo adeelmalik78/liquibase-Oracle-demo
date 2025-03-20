@@ -1,6 +1,6 @@
+--liquibase formatted sql
 
-
---changeset JoeS:CreatePROC_add_job_history_v2 endDelimiter:/ splitStatements:false rollbackEndDelimiter:/
+--changeset JoeS:add_job_history_v2 runWith:sqlplus
 CREATE OR REPLACE PROCEDURE add_sales_history
    /*########################################################################################
    NAME: add_job_history
